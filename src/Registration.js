@@ -25,13 +25,6 @@ class Registration extends Component {
 
   handleSubmit(event) {
     alert('A name was submitted: ' + this.state.email);
-    event.preventDefault();
-    fectch(this.props.formAction, {
-      headers: {
-        'email':
-      }
-      )
-    }
 
   }
     render() {
