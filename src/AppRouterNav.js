@@ -4,7 +4,6 @@ import Registration from './Registration'
 import AddExercise from './AddExercise'
 import ExerciseHistory from './ExerciseHistory'
 import Login from './Login'
-{/* can i keep the user login information props, no backend e.g. cookies handles this*/}
 
 class AppRouterNav extends Component {
     render() {
@@ -28,8 +27,7 @@ class AppRouterNav extends Component {
                         </li>
                     </ul>
                 </nav>
-                {/*if I want something on every page, then i can put here*/}
-                {/*have all routes here*/}
+                {/*if I want something on every page, then i can put here, have all routes here*/}
 
                 <Route path="/" exact component={Registration}/>
                 <Route path="/register" exact component={Registration}/>

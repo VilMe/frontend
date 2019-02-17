@@ -4,28 +4,22 @@ import React, { Component } from 'react';
 class ExerciseHistory extends Component {
     constructor(props){
         super(props)
-        this.State = {
-            data: ' ',
+        this.state = {
+            data: null,
         };
-    }
+    };
     componentDidMount(){
-        fetch('http://0.0.0.0:5000/exercise_history', { mode: 'no-cors' })
-        .then(data => this.setState({data}));
+        fetch('http://0.0.0.0:5000/exercise_history')
+        .then(response => response.json())
+        .then(data => this.setState({data: data}))
     }
+
     render(){
-        console.log(this.state)
-        return (
-            <div className="ExerciseHistory">
-                <header className="ExerciseHistory-header">
-                    Exercise History!
-                {/* create exercise_entry component */}
-                </header>
-                    <p>
-                        Date
-                        exercise number of reps and weight
-                    </p>
-            </div>
-            );
+        console.log(this.state.data)
+        return (<h1>
+        {JSON.stringify(this.state.data)}
+        </h1>
+        );
     }
 }
 export default ExerciseHistory;

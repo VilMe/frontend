@@ -29,7 +29,7 @@ class Registration extends Component {
   }
     render() {
         return (
-           <form onSubmit={this.handleSubmit} action="http://localhost:3000/register" method="post">
+           <form onSubmit={this.handleSubmit} action="http://0.0.0.0:5000/exercise_history" method="post">
                 Register for Fitbub here! <br />
                   <label>
                   email:<br/>
@@ -44,8 +44,7 @@ class Registration extends Component {
                     type="text" 
                     name="password"/>
                   </label> 
-                {/* TO DO, add confirm password, if passwords and confirm
-                password match post, else alert passwords must match */}
+                {/* TO DO, add confirm password, */}
                   <br />
                 <input type="submit" value="Register!"/>
           </form>
