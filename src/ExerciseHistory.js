@@ -5,7 +5,7 @@ class ExerciseHistory extends Component {
     constructor(props){
         super(props)
         this.state = {
-            data: null,
+            data: [],
         };
     };
     componentDidMount(){
@@ -14,11 +14,21 @@ class ExerciseHistory extends Component {
         .then(data => this.setState({data: data}))
     }
 
+
     render(){
-        console.log(this.state.data)
-        return (<h1>
-        {JSON.stringify(this.state.data)}
-        </h1>
+        const data = this.state.data;
+        const dates = Object.keys(data);
+        const listItems = dates.map((date) =>
+            <ul>
+            {date}
+            {data[date].map((item)=>{
+                console.log(item)
+                return(
+            <li>{item.exercise} {item.reps} {item.weight}</li>)})}
+            </ul>
+        );
+        return (
+            <ul>{listItems}</ul>
         );
     }
 }
