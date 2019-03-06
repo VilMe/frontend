@@ -20,11 +20,12 @@ class ExerciseHistory extends Component {
         const dates = Object.keys(data);
         const listItems = dates.map((date) =>
             <ul>
-            {date}
+            Date: {date}
             {data[date].map((item)=>{
                 console.log(item)
-                return(
-            <li>{item.exercise} {item.reps} {item.weight}</li>)})}
+                return(<div className="exercise_history">
+            <li>Exercise Name:{item.exercise} {item.reps} reps {item.weight} lbs</li>
+            </div>)})}
             </ul>
         );
         return (

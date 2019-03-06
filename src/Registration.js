@@ -29,7 +29,8 @@ class Registration extends Component {
   }
     render() {
         return (
-           <form onSubmit={this.handleSubmit} action="http://0.0.0.0:5000/exercise_history" method="post">
+            <div className="register">
+           <form onSubmit={this.handleSubmit} action="http://0.0.0.0:3000/exercise_history" method="post">
                 Register for Fitbub here! <br />
                   <label>
                   email:<br/>
@@ -48,6 +49,7 @@ class Registration extends Component {
                   <br />
                 <input type="submit" value="Register!"/>
           </form>
+          </div>
         );
   }
 }
