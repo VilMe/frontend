@@ -1,0 +1,10 @@
+
+div.register {
+ background-image: url("http://localhost:5000/static/abs.jpg");
+ background-size: cover;
+ background-repeat: no-repeat;
+ background-position: center center;
+ color: white;
+ -webkit-font-smoothing: antialiased;
+ height: 500px;
+}

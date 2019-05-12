@@ -8,29 +8,24 @@ class Registration extends Component {
       email: '',
       password: ''
     };
-    this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
 
-  handleInputChange(event) {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
-
-    this.setState({
-      [name]: value
-    });
-  }
-
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.email);
+    alert('Logged In! Have fun exercising! ' + this.state.email);
+    event.preventDefault();
+    const data = new FormData(event.target);
 
+    fetch('http://0.0.0.0:5000/register',{ 
+          method: 'POST',
+          body: data
+    });
   }
     render() {
         return (
-            <div className="register">
-           <form onSubmit={this.handleSubmit} action="http://0.0.0.0:3000/exercise_history" method="post">
+          <div className="register">
+          <form onSubmit={this.handleSubmit} >
                 Register for Fitbub here! <br />
                   <label>
                   email:<br/>
@@ -42,7 +37,7 @@ class Registration extends Component {
                   <label>
                   password:<br/>
                     <input 
-                    type="text" 
+                    type="password" 
                     name="password"/>
                   </label> 
                 {/* TO DO, add confirm password, */}

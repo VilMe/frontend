@@ -11,12 +11,10 @@ class AppRouterNav extends Component {
         <Router>
             <div>
                 
-                {/*if I want something on every page, then i can put here, have all routes here*/}
-
-                <Route path="/" exact component={Registration}/>
+{/*if I want something on every page, then i can put here, have all routes here*/}
+                <Route path="/" exact component={Login}/>
                 <Route path="/register" exact component={Registration}/>
                 <Route path="/exercise_history" exact component={ExerciseHistory}/>
-                <Route path="/login" exact component={Login}/>
                 <Route path="/add_exercise" exact component={AddExercise}/>
             </div>
         </Router>
